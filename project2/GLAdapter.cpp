@@ -16,7 +16,7 @@ void GLAdapter::init()
     // probably allow this to be configurable.
     
 	/*  select clearing (background) color */
-    glClearColor (0.0, 1.0, 1.0, 0.0);
+    glClearColor (0.0, 0.0, 0.0, 0.0);
 
 	/*  initialize viewing values */
     glMatrixMode(GL_PROJECTION);

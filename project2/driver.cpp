@@ -18,14 +18,7 @@ int main(int argc, char **argv)
 	GL->setupWindow(400, 400, 100, 100, "hello");
 	GL->init();
 	GL->draw(new GraphicObject("stuff"));
-	//glutInit(&argc, argv);
-	//glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    //glutInitWindowSize(450, 450); 
-    //glutInitWindowPosition (100, 100);
-    //glutCreateWindow("hello");
-    //init ();
-    //glutDisplayFunc(display); 
-    glutMainLoop();
+	GL->loop();
 
 	cout << "stuff";
 	return 0;
