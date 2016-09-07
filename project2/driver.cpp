@@ -14,6 +14,8 @@ void display(void);
 
 int main(int argc, char **argv)
 {
+	// MAKE A CONFIG PARSER //////////
+
 	IGLAdapter* GL = new GLAdapter(argc, argv);
 	GL->setupWindow(400, 400, 100, 100, "hello");
 	GL->init();

@@ -4,7 +4,8 @@ using namespace std;
 
 GraphicObject::GraphicObject(string _object_uri)
 {
-    this->object_uri = _object_uri;
+    this->parser = new ObjectParser();
+    this->parser->parse(_object_uri);
 }
 
 void GraphicObject::draw()

@@ -3,13 +3,14 @@
 
 #include <string>
 #include <GL/glut.h>
+#include "ObjectParser.h"
 
 using namespace std;
 
 class GraphicObject
 {
 	private:
-		string object_uri;
+		ObjectParser* parser;
 
 	public:
 		GraphicObject(string _object_uri);

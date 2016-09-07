@@ -13,7 +13,7 @@ void GLAdapter::setupWindow(int _window_width, int _window_height,
 
 void GLAdapter::init()
 {
-    // probably allow this to be configurable.
+    // probably allow this to be configurable. ////////////
     
 	/*  select clearing (background) color */
     glClearColor (0.0, 0.0, 0.0, 0.0);
