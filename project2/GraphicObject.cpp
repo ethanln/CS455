@@ -5,7 +5,7 @@ using namespace std;
 GraphicObject::GraphicObject(string _object_uri)
 {
     this->parser = new ObjectParser();
-    this->parser->parse(_object_uri);
+    this->parser->parse(_object_uri, this->out_vertices, this->out_uvs, this->out_normals);
 }
 
 void GraphicObject::draw()

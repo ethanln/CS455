@@ -1,8 +1,16 @@
 #include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <stdio.h>
 #include <fstream>
 #include <sstream>
 #include <vector>
 #include <GL/glut.h>
+#include <string.h>
+
+#include <glm/vec2.hpp> // glm::vec3
+#include <glm/vec3.hpp> // glm::vec3
+#include <glm/vec4.hpp> // glm::vec4
 
 
 using namespace std;
@@ -15,9 +23,9 @@ class ObjectParser
 		vector<unsigned int> uvIndices;
 		vector<unsigned int> normalIndices;
 
-		vector<int> temp_vertices;
-		vector<int> temp_uvs;
-		vector<int> temp_normals;
+		vector<glm::vec3> temp_vertices;
+		vector<glm::vec2> temp_uvs;
+		vector<glm::vec3> temp_normals;
 
 	public:
 
@@ -25,7 +33,10 @@ class ObjectParser
 
 		~ObjectParser(){}
 
-		bool parse(string file_path);
+		bool parse(string file_path, 
+						vector<glm::vec3> &out_vertices, 
+						vector<glm::vec2> &out_uvs, 
+						vector<glm::vec3> &out_normals);
 
 		vector<unsigned int> getVertexIndices();
 
@@ -33,9 +44,9 @@ class ObjectParser
 
 		vector<unsigned int> getnormalIndices();
 
-		vector<int> getTempVertices();
+		vector<glm::vec3> getTempVertices();
 
-		vector<int> getTempUVs();
+		vector<glm::vec2> getTempUVs();
 
-		vector<int> getTempNormals();
+		vector<glm::vec3> getTempNormals();
 };
