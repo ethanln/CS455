@@ -3,7 +3,12 @@
 
 #include <GL/glut.h>
 #include <string>
+#include <sstream>
+#include <stdlib.h>
+#include <stdio.h>
 #include "GraphicObject.h"
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -16,7 +21,7 @@ class IGLAdapter
 		
 		virtual void init() = 0;
 
-		virtual void draw(GraphicObject*) = 0;
+		virtual void draw() = 0;
 
 		virtual void loop() = 0;
 };

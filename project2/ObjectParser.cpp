@@ -16,7 +16,7 @@ bool ObjectParser::parse(string file_path,
 	}
 	else
 	{
-		printf("File does exist");
+		printf("File does exist \n");
 	}
 
 	while( 1 )
@@ -72,48 +72,26 @@ bool ObjectParser::parse(string file_path,
 		}
 	}
 
-	for( unsigned int i = 0; i < vertexIndices.size(); i++ )
+	for(unsigned int i = 0; i < vertexIndices.size(); i++)
 	{
 		unsigned int vertexIndex = vertexIndices[i];
 		glm::vec3 vertex = temp_vertices[vertexIndex - 1];
 		out_vertices.push_back(vertex);
-		//
-		// do normals
-		//
-		// do uvs
 	}
 
-	//glBufferData(GL_ARRAY_BUFFER, out_vertices.size() * sizeof(glm::vec3), &out_vertices[0], GL_STATIC_DRAW);
+	for(unsigned int i = 0; i < uvIndices.size(); i++ )
+	{
+		unsigned int uvIndex = uvIndices[i];
+		glm::vec2 uv = temp_uvs[uvIndex - 1];
+		out_uvs.push_back(uv);
+	}
+
+	for(unsigned int i = 0; i < normalIndices.size(); i++ )
+	{
+		unsigned int normalIndex = normalIndices[i];
+		glm::vec3 normal = temp_normals[normalIndex - 1];
+		out_normals.push_back(normal);
+	}
 
 	return true;
-}
-
-vector<unsigned int> ObjectParser::getVertexIndices()
-{
-	return this->vertexIndices;
-}
-
-vector<unsigned int> ObjectParser::getUVIndices()
-{
-	return this->uvIndices;
-}
-
-vector<unsigned int> ObjectParser::getnormalIndices()
-{
-	return this->normalIndices;
-}
-
-vector<glm::vec3> ObjectParser::getTempVertices()
-{
-	return this->temp_vertices;
-}
-
-vector<glm::vec2> ObjectParser::getTempUVs()
-{
-	return this->temp_uvs;
-}
-
-vector<glm::vec3> ObjectParser::getTempNormals()
-{
-	return this->temp_normals;
 }

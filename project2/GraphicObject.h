@@ -13,12 +13,6 @@ using namespace std;
 
 class GraphicObject
 {
-	private:
-		ObjectParser* parser;
-		
-		vector<glm::vec3> out_vertices;
-		vector<glm::vec2> out_uvs;
-		vector<glm::vec3> out_normals;
 
 	public:
 		GraphicObject(string _object_uri);
@@ -26,8 +20,6 @@ class GraphicObject
 		~GraphicObject(){}
 
 		void draw();
-		
-		static void display(void);
 };
 
 #endif

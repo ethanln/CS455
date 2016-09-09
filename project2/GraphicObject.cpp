@@ -2,36 +2,33 @@
 
 using namespace std;
 
+vector<glm::vec3> out_vertices;
+vector<glm::vec2> out_uvs;
+vector<glm::vec3> out_normals;
+
 GraphicObject::GraphicObject(string _object_uri)
 {
-    this->parser = new ObjectParser();
-    this->parser->parse(_object_uri, this->out_vertices, this->out_uvs, this->out_normals);
+    ObjectParser* parser = new ObjectParser();
+    parser->parse(_object_uri, out_vertices, out_uvs, out_normals);
 }
 
 void GraphicObject::draw()
 {
-    glutDisplayFunc(display);
-}
 
-void GraphicObject::display(void)
-{
-    // IMPLMENT PARSING AND RENDERING HERE
-    
 	/*  clear all pixels  */
     glClear(GL_COLOR_BUFFER_BIT);
 
-	/*  draw white polygon (rectangle) with corners at
-	 *  (0.25, 0.25, 0.0) and (0.75, 0.75, 0.0)  
+	/*  
+	 *  instantiate paint color as white
 	 */
     glColor3f(1.0, 1.0, 1.0);
     glBegin(GL_POLYGON);
-        glVertex3f(0.25, 0.25, 0.0);
-        glVertex3f(0.75, 0.25, 0.0);
-        glVertex3f(0.75, 0.75, 0.0);
-        glVertex3f(0.25, 0.75, 0.0);
+        for(unsigned int i = 0; i < out_vertices.size(); i++){
+            glVertex3f(out_vertices.at(i).x, out_vertices.at(i).y, out_vertices.at(i).z);
+        }
     glEnd();
 
-	/*  don't wait!  
+	/*  
 	 *  start processing buffered OpenGL routines 
 	 */
     glFlush();

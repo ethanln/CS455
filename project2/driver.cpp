@@ -9,22 +9,21 @@
 
 using namespace std;
 
-void init();
-void display(void);
-
 int main(int argc, char **argv)
 {
 	// MAKE A CONFIG PARSER //////////
-	cout << "Setting up shell...";
-	IGLAdapter* GL = new GLAdapter(argc, argv);
-	GL->setupWindow(400, 400, 100, 100, "hello");
+	printf("Setting up shell...\n");
+	IGLAdapter* GL = new GLAdapter(argc, argv, new GraphicObject("objects/crayonbox-color-2.obj"));
+	GL->setupWindow(1000, 1000, 100, 100, "hello");
 	GL->init();
-
-	cout << "Drawing...";
-	GL->draw(new GraphicObject("objects/crayonbox-color.obj"));
-	cout << "Loop...";
+	
+	printf("Drawing...\n");
+	
+	// GraphicObject* obj = new GraphicObject("objects/crayonbox-color.obj");
+	GL->draw();
+	printf("Loop...\n");
 	GL->loop();
 
-	cout << "stuff";
 	return 0;
 }
+

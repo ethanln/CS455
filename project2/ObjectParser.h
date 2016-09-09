@@ -38,15 +38,4 @@ class ObjectParser
 						vector<glm::vec2> &out_uvs, 
 						vector<glm::vec3> &out_normals);
 
-		vector<unsigned int> getVertexIndices();
-
-		vector<unsigned int> getUVIndices();
-
-		vector<unsigned int> getnormalIndices();
-
-		vector<glm::vec3> getTempVertices();
-
-		vector<glm::vec2> getTempUVs();
-
-		vector<glm::vec3> getTempNormals();
 };
