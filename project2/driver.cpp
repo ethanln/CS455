@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
 	// MAKE A CONFIG PARSER //////////
 	printf("Setting up shell...\n");
-	IGLAdapter* GL = new GLAdapter(argc, argv, new GraphicObject("objects/crayonbox-color-2.obj", "images/CrayonBox2.png"));
+	IGLAdapter* GL = new GLAdapter(argc, argv, new GraphicObject("objects/crayon-color.obj", "images/greenCrayon.bmp"));
 	GL->setupWindow(1000, 1000, 100, 100, "hello");
 	GL->init();
 	
